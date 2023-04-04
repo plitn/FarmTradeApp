@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <meta charset="utf-8">
+  <title>Product Page</title>
+</head>
+  <body>
+    <header>
+      <div class="logo">FarmTrade</div>
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search products...">
+        <button class="search-button">Search</button>
+      </div>
+      <div class="dropdown user-buttons">
+        <button class="user-button">Categories</button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Category 1</a></li>
+                  <li><a href="#">Category 2</a></li>
+                  <li><a href="#">Category 3</a></li>
+                </ul>
+      </div>
+      <div class="user-buttons">
+        <a class="user-button button" href="~/SignIn">Sign In</a>
+        <a class="user-button button" href="~/SignUp">Sign Up</a>
+      </div>
+    </header>
+  <main>
+    <div class="product">
+      <div class="product-photo"></div>
+      <div class="product-info">
+        <div class="product-name">Product Name</div>
+        <div class="product-rating">4.5 stars</div>
+        <div class="product-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod, ex vel luctus fermentum, urna est commodo nulla, sed vestibulum nisl ex sit amet quam. Donec lacinia felis vitae semper feugiat. Nullam eu lobortis orci.
+        </div>
+        <div class="product-compound">
+          <strong>Compound:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod, ex vel luctus fermentum, urna est commodo nulla.
+        </div>
+      </div>
+      <div class="seller-info">
+        <div class="seller-photo"></div>
+        <div class="seller-name">Seller Name</div>
+        <div class="seller-rating">4.5 stars</div>
+      </div>
+      <button class="contact-button">Contact Seller</button>
+    </div>
+  </main>
+  <script>
+    let prevScrollPos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        document.querySelector("header").style.top = "0";
+      } else {
+        document.querySelector("header").style.top = "-80px";
+      }
+      prevScrollPos = currentScrollPos;
+    }
+  </script>
+  </body>
+</html>
+
+
+
+
+
