@@ -1,16 +1,20 @@
 using System.Diagnostics;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using FarmTradeApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace FarmTradeApp.Controllers;
 
 public class SignInController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly FarmTradeContext _context;
 
-    public SignInController(ILogger<HomeController> logger)
+    public SignInController(FarmTradeContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     [Route("/SignIn")]
@@ -18,7 +22,15 @@ public class SignInController : Controller
     {
         return View();
     }
-    
+
+    [AllowAnonymous]
+    [HttpPost]
+    public IActionResult ProcessSignIn([FromBody] LoginDataModel ldm)
+    {
+        return Redirect("~/Index");
+    }
+
+   
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

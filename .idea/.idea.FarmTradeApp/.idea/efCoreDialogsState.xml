@@ -4,6 +4,7 @@
     <option name="keyValueStorage">
       <map>
         <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:d8706342-c283-447a-8401-f4429066353a:dbContext" value="FarmTradeApp.Models.FarmTradeContext" />
         <entry key="Common:dbContextFolder" value="Context" />
         <entry key="Common:dbContextName" value="MyDbContext" />
         <entry key="Common:generateOnConfiguring" value="true" />

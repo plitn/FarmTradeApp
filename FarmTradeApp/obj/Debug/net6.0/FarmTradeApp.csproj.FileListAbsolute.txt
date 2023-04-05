@@ -47,3 +47,11 @@
 /home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
 /home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Npgsql.dll
 /home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

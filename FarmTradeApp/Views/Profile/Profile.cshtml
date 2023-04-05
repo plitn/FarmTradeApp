@@ -27,10 +27,9 @@
 
     <div class="user-info">
       <h2>User Profile</h2>
-      <p>Name: John Doe</p>
-      <p>Age: 35</p>
-      <p>Email: johndoe@example.com</p>
-      <p>Address: 123 Main St, Anytown, USA</p>
+      <p>Name: @User.FindFirst("user_name").Value</p>
+      <p>Address: @User.FindFirst("address").Value</p>
+      <p>Email: @User.FindFirst("email").Value</p>
       <a href="~/AddProduct" target="popup" onclick="window.open('/AddProduct','name','width=800,height=600')">
         Add product
       </a>
@@ -40,8 +39,7 @@
         Upload Document
       </a>
       <br>
-      
-      <a href="~/Index">Log out</a>
+      <a href="~/LogOut">Log out</a>
     </div>
     <div class="product-grid">
       <div class="product">

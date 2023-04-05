@@ -1,5 +1,9 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using FarmTradeApp.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FarmTradeApp.Controllers;
@@ -14,9 +18,17 @@ public class ProfileController : Controller
     }
 
     [Route("/Profile")]
+    [Authorize]
     public IActionResult Profile()
     {
         return View();
+    }
+
+    [Route("/LogOut")]
+    public async Task<IActionResult> LogOutProfile()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return Redirect("~/Index");
     }
     
 
