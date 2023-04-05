@@ -12,7 +12,7 @@ public class Products
     public string name { get; set; }
     public string description { get; set; }
     public string photo { get; set; }
-    public string category { get; set; }
+    public int category { get; set; }
     public int weight { get; set; }
     public int price { get; set; }
     public bool is_active { get; set; }
