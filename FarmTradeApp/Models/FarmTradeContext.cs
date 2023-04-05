@@ -8,4 +8,10 @@ public class FarmTradeContext : DbContext
     {
         
     }
+    
+    public DbSet<Users> Users { get; set; }
+    public DbSet<Document> Documents { get; set; }
+    public DbSet<Favourites> Favourites { get; set; }
+    public DbSet<Products> Products { get; set; }
+
 }

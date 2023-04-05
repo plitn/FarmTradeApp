@@ -6,16 +6,16 @@ namespace FarmTradeApp.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly FarmTradeContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(FarmTradeContext ftContext)
     {
-        _logger = logger;
+        _context = ftContext;
     }
 
     public IActionResult Index()
     {
-        return View();
+        return View("Index", _context.Products);
     }
 
     public IActionResult Privacy()

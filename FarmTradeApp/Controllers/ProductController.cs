@@ -6,17 +6,26 @@ namespace FarmTradeApp.Controllers;
 
 public class ProductController :Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly FarmTradeContext _context;
 
-    public ProductController(ILogger<HomeController> logger)
+    public ProductController(FarmTradeContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     [Route("/Product")]
-    public IActionResult Product()
+    [HttpGet]
+    public IActionResult Product(int id)
     {
-        return View();
+        if (id == null || id < 0 || !_context.Products.Any(x => x.product_id == id))
+        {
+            Redirect("~/Index");
+        }
+
+        var neededProduct = _context.Products.First(x => x.product_id == id);
+        var seller = _context.Users.First(x => x.user_id == neededProduct.user_id);
+        var p = new ProductDataModel(neededProduct, seller);
+        return View(p);
     }
     
 

@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FarmTradeApp.Models;
 
+[Table("users")]
 public class Users
 {
     [Key]

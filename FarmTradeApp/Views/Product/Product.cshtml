@@ -1,9 +1,10 @@
+@model ProductDataModel
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="~/css/styles.css">
     <meta charset="utf-8">
-  <title>Product Page</title>
+  <title>@Model.Product.name</title>
 </head>
   <body>
     <header>
@@ -29,18 +30,18 @@
     <div class="product">
       <div class="product-photo"></div>
       <div class="product-info">
-        <div class="product-name">Product Name</div>
+        <div class="product-name">@Model.Product.name</div>
         <div class="product-rating">4.5 stars</div>
         <div class="product-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod, ex vel luctus fermentum, urna est commodo nulla, sed vestibulum nisl ex sit amet quam. Donec lacinia felis vitae semper feugiat. Nullam eu lobortis orci.
+          @Model.Product.description
         </div>
         <div class="product-compound">
           <strong>Compound:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod, ex vel luctus fermentum, urna est commodo nulla.
         </div>
       </div>
       <div class="seller-info">
-        <div class="seller-photo"></div>
-        <div class="seller-name">Seller Name</div>
+        <div class="seller-photo">@Model.Seller.profile_picture</div>
+        <div class="seller-name">@Model.Seller.first_name @Model.Seller.last_name</div>
         <div class="seller-rating">4.5 stars</div>
       </div>
       <button class="contact-button">Contact Seller</button>

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xdtBgcfU0nCJISbkhU4UdRVso9SmsiN1qnFiBdCIgvtqCKYI8MzTeizho8jkiApbRh0YOqKDWUy4UllUk9/dSg==",
+  "dgSpecHash": "wyskCLxDhhj7os9slFUxo2d/PglRSDatTF/ps6XHGG8anf7eghMsVbyXDh/lloqv7ZlWiV0xD/np37btXINuVQ==",
   "success": true,
   "projectFilePath": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/FarmTradeApp.csproj",
   "expectedPackageFiles": [
     "/home/platon/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/platon/.nuget/packages/microsoft.entityframeworkcore/7.0.4/microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
-    "/home/platon/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.0-preview.2.23128.3/microsoft.entityframeworkcore.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
-    "/home/platon/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.0-preview.2.23128.3/microsoft.entityframeworkcore.analyzers.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "/home/platon/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.4/microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
+    "/home/platon/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.4/microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",
     "/home/platon/.nuget/packages/microsoft.entityframeworkcore.design/7.0.4/microsoft.entityframeworkcore.design.7.0.4.nupkg.sha512",
     "/home/platon/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.4/microsoft.entityframeworkcore.relational.7.0.4.nupkg.sha512",
     "/home/platon/.nuget/packages/microsoft.entityframeworkcore.tools/7.0.4/microsoft.entityframeworkcore.tools.7.0.4.nupkg.sha512",
