@@ -52,6 +52,20 @@
           <b>Descripion:</b> <br>
           @Model.Product.description
         </div>
+        @if (Model.IsFavourited && User.Identity.IsAuthenticated && User.FindFirst("user_id").Value
+          != Model.Seller.user_id.ToString())
+        {
+          <a href="~/Product/UnFav?id=@Model.Product.product_id">
+          <button class="delete-button">Remove from favourites</button>
+        </a>
+        }
+        else if (User.Identity.IsAuthenticated && User.FindFirst("user_id").Value
+                 != Model.Seller.user_id.ToString())
+        {
+          <a href="~/Product/Fav?id=@Model.Product.product_id">
+        <button class="contact-button">Add to favourites</button>
+        </a>
+        }
       </div>
       <div class="seller-info">
         <div class="seller-photo">
@@ -63,7 +77,7 @@
         @if (@Model.Seller.user_id.ToString() == User.FindFirst("user_id").Value)
         {
           <a href="~/DeleteProduct?id=@Model.Product.product_id">
-            <button class="contact-button">Delete Product</button>
+            <button class="delete-button">Delete Product</button>
             </a>
         }
         else

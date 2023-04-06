@@ -28,6 +28,16 @@ public class ProductController :Controller
         var seller = _context.Users.First(x => x.user_id == neededProduct.user_id);
         var p = new ProductDataModel(neededProduct, seller);
         p.WeightType = _context.WeightTypes.First(x => x.Type_id == p.Product.weight_category);
+        var favs = _context.Favourites
+            .Where(x => x.user_id.ToString() == User.FindFirst("user_id").Value).ToList();
+        p.IsFavourited = false;
+        foreach (var item in favs)
+        {
+            if (item.product_id == id)
+            {
+                p.IsFavourited = true;
+            }
+        }
         return View(p);
     }
 
@@ -37,8 +47,54 @@ public class ProductController :Controller
     {
         ViewData["catList"] = _context.Categories;
         _context.Products.Remove(_context.Products.First(x => x.product_id == id));
+        foreach (var fav in _context.Favourites)
+        {
+            if (fav.product_id == id)
+            {
+                _context.Favourites.Remove(fav);
+            }
+        }
         _context.SaveChanges();
         return Redirect("~/Profile");
+    }
+
+    [Authorize]
+    [Route("/Product/UnFav")]
+    public IActionResult UnFav(int id)
+    {
+        var neededProduct = _context.Products.First(x => x.product_id == id);
+        var seller = _context.Users.First(x => x.user_id == neededProduct.user_id);
+        var p = new ProductDataModel(neededProduct, seller);
+        p.WeightType = _context.WeightTypes.First(x => x.Type_id == p.Product.weight_category);
+
+        _context.Favourites.Remove(_context.Favourites
+            .First(x => x.product_id == id &&
+                        x.user_id.ToString() == User.FindFirst("user_id").Value));
+        _context.SaveChanges();
+        
+        p.IsFavourited = false;
+
+        return Redirect($"~/Product?id={id}");
+    }
+    
+    [Authorize]
+    [Route("/Product/Fav")]
+    public IActionResult Fav(int id)
+    {
+        var neededProduct = _context.Products.First(x => x.product_id == id);
+        var seller = _context.Users.First(x => x.user_id == neededProduct.user_id);
+        var p = new ProductDataModel(neededProduct, seller);
+        p.WeightType = _context.WeightTypes.First(x => x.Type_id == p.Product.weight_category);
+
+        var favElem = new Favourites();
+        favElem.product_id = id;
+        favElem.user_id = int.Parse(User.FindFirst("user_id").Value);
+        _context.Favourites.Add(favElem);
+        _context.SaveChanges();
+        
+        p.IsFavourited = true;
+
+        return Redirect($"~/Product?id={id}");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
