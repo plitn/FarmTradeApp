@@ -65,13 +65,15 @@
   <div class="product-grid">
     @foreach (var product in Model.Products)
     {
-      <a href="~/Product?id=@product.product_id">
-    <div class="product">
-      <img src="@product.photo">
-      <h3>@product.name</h3>
-      <p>@product.description</p>
-    </div>
-    </a>
+      <div class="product">
+          <a href="~/Product?id=@product.product_id">
+          <img src="@product.photo">
+          <h3>@product.name</h3>
+          <a href="~/Product/UnFav?id=@product.product_id">
+            <button class="delete-button">Remove</button>
+          </a>
+                    </a>
+        </div>
     }
   </div>
     <script>
