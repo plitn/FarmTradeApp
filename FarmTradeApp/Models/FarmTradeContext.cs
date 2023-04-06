@@ -14,5 +14,6 @@ public class FarmTradeContext : DbContext
     public DbSet<Favourites> Favourites { get; set; }
     public DbSet<Products> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
+    public DbSet<WeightType> WeightTypes { get; set; }
 
 }

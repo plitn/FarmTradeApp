@@ -12,7 +12,8 @@ public class HomeController : Controller
     {
         _context = ftContext;
     }
-
+    
+    [Route("/")]
     public IActionResult Index()
     {
         Console.WriteLine(_context.Categories);
@@ -25,7 +26,11 @@ public class HomeController : Controller
     public IActionResult Index(int cat)
     {
         ViewData["catList"] = _context.Categories;
-        var selectedByCategory = _context.Products.Where(x => x.category == cat);
+        var selectedByCategory = _context.Products.Where(x => x.category == cat).ToList();
+        if (!selectedByCategory.Any())
+        {
+            selectedByCategory = new List<Products>();
+        }
         return View("Index", selectedByCategory);
     }
 

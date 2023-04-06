@@ -36,6 +36,8 @@ public class SignUpController : Controller
         user.first_name = HttpContext.Request.Form["name"];
         user.email = HttpContext.Request.Form["email"];
         user.profile_picture = "";
+        _context.Users.Add(user);
+        _context.SaveChanges();
         var claims = new List<Claim>
         {
             new Claim("user_id", user.user_id.ToString()),

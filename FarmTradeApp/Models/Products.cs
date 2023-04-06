@@ -16,7 +16,5 @@ public class Products
     public int weight { get; set; }
     public int price { get; set; }
     public bool is_active { get; set; }
-    public string weight_category { get; set; }
-    public DateTime created_at { get; set; }
-    public DateTime updated_at { get; set; }
+    public int weight_category { get; set; }
 }

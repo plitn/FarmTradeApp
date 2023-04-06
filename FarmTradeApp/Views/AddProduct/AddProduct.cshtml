@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@model AddProductOptionsModel
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,115 +7,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Add Product | My Shop</title>
-  <style>
-/* Global styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #f5f5f5;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header styles */
-header {
-    background-color: #fff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-/* Form styles */
-form {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 600px;
-    margin: 40px auto;
-}
-
-form h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-form label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="number"],
-form input[type="file"],
-form textarea {
-    border: none;
-    outline: none;
-    background-color: #f5f5f5;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-form select {
-    border: none;
-    outline: none;
-    background-color: #f5f5f5;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 20px;
-    appearance: none;
-}
-
-form button[type="submit"] {
-    border: none;
-    outline: none;
-    background-color: #2ecc71;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-form a {
-    color: #2ecc71;
-    text-decoration: none;
-}
-
-</style>
+  <link rel="stylesheet" href="~/css/AddProductStyle.css">
+  <title>Add Product | FarmTrade</title>
 </head>
 
 <body>
 
   <main>
-    <form class="add-product-form" method="POST">
+    <form class="add-product-form" id="add-form" method="POST" asp-action="ManageAdding" enctype="multipart/form-data">
       <h1>Add Product</h1>
       <label for="product-name">Product Name</label>
       <input type="text" id="product-name" name="product-name" required>
@@ -123,24 +23,30 @@ form a {
       <input type="file" id="product-photo" name="product-photo" accept="image/*" required>
 
       <label for="product-price">Product Price</label>
-      <input type="number" id="product-price" name="product-price" step="0.01" required>
+      <input type="number" id="product-price" name="product-price" step="1" required>
+      
+      <label for="product-weight-type">Product Weight Type</label>
+            <select id="product-weight-type" name="product-weight-type" required>
+              <option value="" selected disabled>Select weight type</option>
+              @foreach(var wt in Model.WeightTypes)
+            {
+              <option value="@wt.Type_id">@wt.Type_name</option>
+            }
+              </select>
 
-      <label for="product-quantity">Product Quantity</label>
+      <label for="product-quantity">Product Weight</label>
       <input type="number" id="product-quantity" name="product-quantity" required>
 
       <label for="product-description">Product Description</label>
       <textarea id="product-description" name="product-description" rows="5" required></textarea>
 
-      <label for="product-compound">Product Compound</label>
-      <input type="text" id="product-compound" name="product-compound" required>
-
       <label for="product-category">Product Category</label>
       <select id="product-category" name="product-category" required>
         <option value="" selected disabled>Select a category</option>
-        <option value="Electronics">Electronics</option>
-        <option value="Clothing">Clothing</option>
-        <option value="Home & Garden">Home & Garden</option>
-        <option value="Sports & Outdoors">Sports & Outdoors</option>
+        @foreach(var cat in Model.Categories)
+      {
+        <option value="@cat.Category_id">@cat.Category_name</option>
+      }
       </select>
 
       <button type="submit">Add Product</button>
