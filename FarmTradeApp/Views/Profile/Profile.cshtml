@@ -1,3 +1,4 @@
+@model FarmTradeApp.Controllers.UserAndProductsModel
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,52 +28,35 @@
 
     <div class="user-info">
       <h2>User Profile</h2>
-      <p>Name: @User.FindFirst("user_name").Value</p>
-      <p>Address: @User.FindFirst("address").Value</p>
-      <p>Email: @User.FindFirst("email").Value</p>
-      <a href="~/AddProduct" target="popup" onclick="window.open('/AddProduct','name','width=800,height=600')">
-        Add product
-      </a>
-      <br>
-      <a href="#">Your documents</a> <br>
-      <a href="~/DocumentUpload" target="popup" onclick="window.open('/DocumentUpload','name','width=520,height=320')">
-        Upload Document
-      </a>
-      <br>
-      <a href="~/LogOut">Log out</a>
+      <p>Name: @Model.user.first_name</p>
+      <p>Address: @Model.user.address</p>
+      <p>Email: @Model.user.email</p>
+      <a href="#">Documents</a> <br>
+      @if (@User.FindFirst("user_id").Value == Model.user.user_id.ToString())
+      {
+        <a href="~/AddProduct" target="popup" onclick="window.open('/AddProduct','name','width=800,height=600')">
+          Add product
+        </a>
+        <br>
+        <a href="~/DocumentUpload" target="popup" onclick="window.open('/DocumentUpload','name','width=520,height=320')">
+          Upload Document
+        </a>
+        <br>
+        <a href="~/LogOut">Log out</a>
+      }
     </div>
-    <div class="product-grid">
-      <div class="product">
-        <h3>Product 1</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 1.</p>
-      </div>
-      <div class="product">
-        <h3>Product 2</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 2.</p>
-      </div>
-      <div class="product">
-        <h3>Product 3</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 3.</p>
-      </div>
-      <div class="product">
-        <h3>Product 4</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 4.</p>
-      </div>
-      <div class="product">
-        <h3>Product 5</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 5.</p>
-      </div>
-      <div class="product">
-        <h3>Product 6</h3>
-        <img src="https://via.placeholder.com/150">
-        <p>Description of product 6.</p>
-      </div>
+  <div class="product-grid">
+    @foreach (var product in Model.Products)
+    {
+      <a href="~/Product?id=@product.product_id">
+    <div class="product">
+      <img src="@product.photo">
+      <h3>@product.name</h3>
+      <p>@product.description</p>
     </div>
+    </a>
+    }
+  </div>
     <script>
       let prevScrollPos = window.pageYOffset;
       window.onscroll = function() {

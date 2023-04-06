@@ -10,18 +10,45 @@ namespace FarmTradeApp.Controllers;
 
 public class ProfileController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly FarmTradeContext _context;
 
-    public ProfileController(ILogger<HomeController> logger)
+    public ProfileController(FarmTradeContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
-    [Route("/Profile")]
+    [HttpGet("/Profile")]
     [Authorize]
     public IActionResult Profile()
     {
-        return View();
+        var profileProducts = _context.Products
+            .Where(x => x.user_id == int.Parse(User.FindFirst("user_id").Value))
+            .ToList();
+        var userData = new UserAndProductsModel();
+        userData.user = _context.Users
+            .First(x => x.user_id.ToString() == User.FindFirst("user_id").Value);
+        userData.Products = profileProducts;
+        return View(userData);
+    }
+    
+    [HttpGet("/Profile/{id}")]
+    public IActionResult Profile(int id)
+    {
+        if (id == int.Parse(User.FindFirst("user_id").Value))
+        {
+            Redirect("~/Profile");
+        }
+
+        // ПРОВЕРЯЕМ ЧТО ПОЛЬЗОВАТЕЛЬ СУЩЕСТВУЕТ CСДЕЛАТЬ
+        
+        var profileProducts = _context.Products
+            .Where(x => x.user_id == id)
+            .ToList();
+        var userData = new UserAndProductsModel();
+        userData.user = _context.Users
+            .First(x => x.user_id == id);
+        userData.Products = profileProducts;
+        return View(userData);
     }
 
     [Route("/LogOut")]
