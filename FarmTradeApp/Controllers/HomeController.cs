@@ -16,9 +16,22 @@ public class HomeController : Controller
     [Route("/")]
     public IActionResult Index()
     {
-        Console.WriteLine(_context.Categories);
         ViewData["catList"] = _context.Categories;
         return View("Index", _context.Products);
+    }
+    
+    [HttpGet]
+    public IActionResult Search(string search_params)
+    {
+        ViewData["catList"] = _context.Categories;
+        var query = search_params;
+        var searchSelected = _context.Products.Where(
+            x => x.name.Contains(query) || x.description.Contains(query)).ToList();
+        if (!searchSelected.Any())
+        {
+            searchSelected = new List<Products>();
+        }
+        return View("Index", searchSelected);
     }
 
     [HttpGet]

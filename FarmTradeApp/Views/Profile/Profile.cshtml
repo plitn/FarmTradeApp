@@ -6,28 +6,45 @@
       <link rel="stylesheet" href="~/css/profileStyle.css">
   </head>
   <body>
-    <header>
-      <div class="logo">FarmTrade</div>
-      <div class="search-bar">
-        <input type="text" class="search-input" placeholder="Search products...">
-        <button class="search-button">Search</button>
-      </div>
-      <div class="dropdown user-buttons">
-        <button class="user-button">Categories</button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Category 1</a></li>
-                  <li><a href="#">Category 2</a></li>
-                  <li><a href="#">Category 3</a></li>
-                </ul>
-      </div>
-      <div class="user-buttons">
-        <a class="user-button button" href="~/SignIn">Sign In</a>
-        <a class="user-button button" href="~/SignUp">Sign Up</a>
-      </div>
-    </header>
+<header>
+        <a href="~/Index">
+          <div class="logo">FarmTrade</div>
+        </a>
+        <div class="search-bar">
+          <form asp-controller="Home" asp-action="Search" method="GET">
+          <input type="text" class="search-input" name="search_params" placeholder="Search products...">
+          <button class="search-button" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="dropdown user-buttons">
+          <button class="user-button">Categories</button>
+          <ul class="dropdown-menu">
+            @foreach (var cat in (IEnumerable<Category>)ViewData["catList"])
+            {
+              <li><a href="~/Index?cat=@cat.Category_id">@cat.Category_name</a></li>
+            }
+          </ul>
+        </div>
+        <div class="user-buttons">
+          @if (User.Identity.IsAuthenticated)
+          {
+            <a class="user-button button" href="~/Profile">Account</a>
+          }
+          else
+          {
+            <a class="user-button button" href="~/SignIn">Sign In</a>
+            <a class="user-button button" href="~/SignUp">Sign Up</a>
+          }
+        </div>
+      </header>
 
     <div class="user-info">
-      <h2>User Profile</h2>
+      <h2>
+        <div class="seller-photo">
+          <img src="@Model.user.profile_picture" alt="" class="seller-photo">
+          </div>
+        @Model.user.first_name
+      </h2>
       <p>Name: @Model.user.first_name</p>
       <p>Address: @Model.user.address</p>
       <p>Email: @Model.user.email</p>

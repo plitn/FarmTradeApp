@@ -21,6 +21,7 @@ public class ProfileController : Controller
     [Authorize]
     public IActionResult Profile()
     {
+        ViewData["catList"] = _context.Categories;
         var profileProducts = _context.Products
             .Where(x => x.user_id == int.Parse(User.FindFirst("user_id").Value))
             .ToList();
@@ -34,6 +35,7 @@ public class ProfileController : Controller
     [HttpGet("/Profile/{id}")]
     public IActionResult Profile(int id)
     {
+        ViewData["catList"] = _context.Categories;
         if (id == int.Parse(User.FindFirst("user_id").Value))
         {
             Redirect("~/Profile");

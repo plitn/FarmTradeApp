@@ -35,7 +35,22 @@ public class SignUpController : Controller
         user.address = HttpContext.Request.Form["addr"];
         user.first_name = HttpContext.Request.Form["name"];
         user.email = HttpContext.Request.Form["email"];
-        user.profile_picture = "";
+        
+        IFormFile image = HttpContext.Request.Form.Files.GetFile("photo");
+        // Generate a unique file name
+        var fileExtension = Path.GetExtension(image.FileName);
+        var uniqueFileName = $"{DateTime.Now:yyyyMMddHHmmssfff}-{Guid.NewGuid()}{fileExtension}";
+
+        var path = Path.Combine(
+            Directory.GetCurrentDirectory(), "wwwroot", "profilePhotos",
+            uniqueFileName);
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+            image.CopyTo(stream);
+        }
+        var url = Url.Content($"~/profilePhotos/{uniqueFileName}");
+
+        user.profile_picture = url;
         _context.Users.Add(user);
         _context.SaveChanges();
         var claims = new List<Claim>

@@ -9,33 +9,37 @@
     <link rel="stylesheet" href="~/css/indexStyle.css">
   </head>
   <body>
-    <header>
-      <div class="logo">My Shop</div>
-      <div class="search-bar">
-        <input type="text" class="search-input" placeholder="Search products...">
-        <button class="search-button">Search</button>
-      </div>
-      <div class="dropdown user-buttons">
-        <button class="user-button">Categories</button>
-        <ul class="dropdown-menu">
-          @foreach (var cat in (IEnumerable<Category>)ViewData["catList"])
-          {
-            <li><a href="~/Index?cat=@cat.Category_id">@cat.Category_name</a></li>
-          }
-        </ul>
-      </div>
-      <div class="user-buttons">
-        @if (User.Identity.IsAuthenticated)
+  <header>
+    <a href="~/Index">
+      <div class="logo">FarmTrade</div>
+    </a>
+    <div class="search-bar">
+      <form asp-action="Search" method="GET">
+      <input type="text" class="search-input" name="search_params" placeholder="Search products...">
+      <button class="search-button" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="dropdown user-buttons">
+      <button class="user-button">Categories</button>
+      <ul class="dropdown-menu">
+        @foreach (var cat in (IEnumerable<Category>)ViewData["catList"])
         {
-          <a class="user-button button" href="~/Profile">Account</a>
+          <li><a href="~/Index?cat=@cat.Category_id">@cat.Category_name</a></li>
         }
-        else
-        {
-          <a class="user-button button" href="~/SignIn">Sign In</a>
-          <a class="user-button button" href="~/SignUp">Sign Up</a>
-        }
-      </div>
-    </header>
+      </ul>
+    </div>
+    <div class="user-buttons">
+      @if (User.Identity.IsAuthenticated)
+      {
+        <a class="user-button button" href="~/Profile">Account</a>
+      }
+      else
+      {
+        <a class="user-button button" href="~/SignIn">Sign In</a>
+        <a class="user-button button" href="~/SignUp">Sign Up</a>
+      }
+    </div>
+  </header>
     <div class="product-grid">
   @foreach (var product in Model)
   {

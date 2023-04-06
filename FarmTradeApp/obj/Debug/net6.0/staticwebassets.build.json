@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QYXNMcoACIQzd8Hkl9gkxKBlbEDYVLXA0DAGHruXrvc=",
+  "Hash": "AGVWh71OnVaCfQBoB/jZBcYfouVBxTQ+KtLHprpw7W0=",
   "Source": "FarmTradeApp",
   "BasePath": "_content/FarmTradeApp",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/20230406141557822-255925e7-af04-4c23-8f03-bab342a526d0.jpeg"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/images/20230406160819081-054339c5-10ed-4b6f-99e6-99c936a2c63f.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "images/20230406160819081-054339c5-10ed-4b6f-99e6-99c936a2c63f.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/20230406160819081-054339c5-10ed-4b6f-99e6-99c936a2c63f.jpeg"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/images/20230406163714382-b782e7ee-7f47-4cc8-94e6-d96830b7c708.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "images/20230406163714382-b782e7ee-7f47-4cc8-94e6-d96830b7c708.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/20230406163714382-b782e7ee-7f47-4cc8-94e6-d96830b7c708.jpeg"
     },
     {
       "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/images/milk.jpeg",
@@ -1273,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/profilePhotos/20230406163640343-658778ad-2197-40cc-b712-809bdca9d2e2.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "profilePhotos/20230406163640343-658778ad-2197-40cc-b712-809bdca9d2e2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profilePhotos/20230406163640343-658778ad-2197-40cc-b712-809bdca9d2e2.jpeg"
     }
   ]
 }
