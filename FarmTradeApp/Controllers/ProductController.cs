@@ -28,16 +28,20 @@ public class ProductController :Controller
         var seller = _context.Users.First(x => x.user_id == neededProduct.user_id);
         var p = new ProductDataModel(neededProduct, seller);
         p.WeightType = _context.WeightTypes.First(x => x.Type_id == p.Product.weight_category);
-        var favs = _context.Favourites
-            .Where(x => x.user_id.ToString() == User.FindFirst("user_id").Value).ToList();
-        p.IsFavourited = false;
-        foreach (var item in favs)
+        if (User.Identity.IsAuthenticated)
         {
-            if (item.product_id == id)
+            var favs = _context.Favourites
+                .Where(x => x.user_id.ToString() == User.FindFirst("user_id").Value).ToList();
+            p.IsFavourited = false;
+            foreach (var item in favs)
             {
-                p.IsFavourited = true;
+                if (item.product_id == id)
+                {
+                    p.IsFavourited = true;
+                }
             }
         }
+
         return View(p);
     }
 

@@ -48,7 +48,7 @@
       <p>Name: @Model.user.first_name</p>
       <p>Address: @Model.user.address</p>
       <p>Email: @Model.user.email</p>
-      <a href="#">Documents</a> <br>
+      <a href="~/MyDocuments?id=@Model.user.user_id">Documents</a> <br>
       @if (@User.FindFirst("user_id").Value == Model.user.user_id.ToString())
       {
         <a href="~/AddProduct" target="popup" onclick="window.open('/AddProduct','name','width=800,height=600')">
@@ -72,7 +72,7 @@
           <a href="~/Product/UnFav?id=@product.product_id">
             <button class="delete-button">Remove</button>
           </a>
-                    </a>
+          </a>
         </div>
     }
   </div>

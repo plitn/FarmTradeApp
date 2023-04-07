@@ -8,14 +8,16 @@
   </head>
 <main>
   <div class="form-container">
-    <form class="sign-in-form">
-      <h1>Document Uploading</h1>
-      <label for="email">Document Name</label>
-      <input type="email" id="email" name="email" required>
-      <label for="password">File</label>
-      <input id="file-upload" type="file" accept=".pdf"/>
+    <form class="sign-in-form"  id="my-form" method="post" asp-action="ManageDoc" enctype="multipart/form-data">
+      <h1>Sign Up</h1>
+      <label for="name">Document Name:</label>
+      <input type="name" id="name" name="name" required>
       <br>
-      <button type="submit" class="sign-in-button">Save</button>
+      <label for="doc">File:</label>
+      <input type="file" id="doc" name="doc" accept="application/pdf" required>
+      <br>
+      <button type="submit" class="sign-in-button" id="add">Add</button>
+      <p>Already have an account? <a href="#">Sign In</a></p>
     </form>
   </div>
 </main>

@@ -36,7 +36,7 @@ public class ProfileController : Controller
     public IActionResult Profile(int id)
     {
         ViewData["catList"] = _context.Categories;
-        if (id == int.Parse(User.FindFirst("user_id").Value))
+        if (User.Identity.IsAuthenticated && id == int.Parse(User.FindFirst("user_id").Value))
         {
             Redirect("~/Profile");
         }

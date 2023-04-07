@@ -1,8 +1,8 @@
-@model FarmTradeApp.Controllers.UserAndProductsModel
+@model UserAndDocumentsModel
 <!DOCTYPE html>
 <html>
   <head>
-    <title>User Profile</title>
+    <title>Documents</title>
       <link rel="stylesheet" href="~/css/profileStyle.css">
   </head>
   <body>
@@ -48,8 +48,8 @@
       <p>Name: @Model.user.first_name</p>
       <p>Address: @Model.user.address</p>
       <p>Email: @Model.user.email</p>
-      <a href="~/MyDocuments?id=@Model.user.user_id">Documents</a> <br>
-      @if (User.Identity.IsAuthenticated && User.FindFirst("user_id").Value == Model.user.user_id.ToString())
+      <a href="#">Documents</a> <br>
+      @if (@User.FindFirst("user_id").Value == Model.user.user_id.ToString())
       {
         <a href="~/AddProduct" target="popup" onclick="window.open('/AddProduct','name','width=800,height=600')">
           Add product
@@ -65,14 +65,21 @@
       }
     </div>
   <div class="product-grid">
-    @foreach (var product in Model.Products)
+    @foreach (var doc in Model.Documents)
     {
-      <a href="~/Product?id=@product.product_id">
-    <div class="product">
-      <img src="@product.photo">
-      <h3>@product.name</h3>
-      <p>@product.description</p>
-    </div>
+      var x = doc.title.Split(' ')[0];
+      string link = $"https://via.placeholder.com/150x150.png?text={x}+Document";
+      <a href="@doc.file_path">
+        <div class="product">
+      <img src= @link>
+      <h3>@doc.title</h3>
+      @if (Model.user.user_id.ToString() == User.FindFirst("user_id").Value)
+      {
+        <a href="~/MyDocuments/DelDoc?id=@doc.document_id">
+          <button class="delete-button">Remove</button>
+        </a>
+      }
+        </div>
     </a>
     }
   </div>

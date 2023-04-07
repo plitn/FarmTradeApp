@@ -74,7 +74,7 @@
         <div class="seller-name">@Model.Seller.first_name</div>
       </div>
       <a href="~/Profile/@Model.Seller.user_id">
-        @if (@Model.Seller.user_id.ToString() == User.FindFirst("user_id").Value)
+        @if (User.Identity.IsAuthenticated && Model.Seller.user_id.ToString() == User.FindFirst("user_id").Value)
         {
           <a href="~/DeleteProduct?id=@Model.Product.product_id">
             <button class="delete-button">Delete Product</button>
