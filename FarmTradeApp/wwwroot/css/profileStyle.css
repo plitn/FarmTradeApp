@@ -315,3 +315,8 @@ nav a:hover {
 .delete-button:hover {
     background-color: #c0392b;
 }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}

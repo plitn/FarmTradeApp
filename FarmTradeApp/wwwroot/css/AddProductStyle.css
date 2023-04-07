@@ -97,3 +97,7 @@ form a {
     color: #2ecc71;
     text-decoration: none;
 }
+a {
+    color: inherit;
+    text-decoration: inherit;
+}

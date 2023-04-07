@@ -31,6 +31,7 @@
     <div class="user-buttons">
       @if (User.Identity.IsAuthenticated)
       {
+        <a class="user-button button" href="~/Favourites">Favourites</a>
         <a class="user-button button" href="~/Profile">Account</a>
       }
       else
