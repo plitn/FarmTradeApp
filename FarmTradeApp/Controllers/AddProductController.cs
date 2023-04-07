@@ -61,7 +61,7 @@ public class AddProductController : Controller
         newProduct.price = int.Parse(HttpContext.Request.Form["product-price"]);
         newProduct.is_active = true;
         newProduct.weight_category = _context.Categories
-            .First(x => x.Category_id == int.Parse(HttpContext.Request.Form["product-category"])).Category_id;
+            .First(x => x.Category_id == int.Parse(HttpContext.Request.Form["product-weight-type"])).Category_id;
         _context.Products.Add(newProduct);
         _context.SaveChanges();
         return Redirect("~/AddProduct");

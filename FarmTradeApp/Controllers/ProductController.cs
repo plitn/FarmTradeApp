@@ -91,6 +91,14 @@ public class ProductController :Controller
         p.WeightType = _context.WeightTypes.First(x => x.Type_id == p.Product.weight_category);
 
         var favElem = new Favourites();
+        if (_context.Favourites.Any())
+        {
+            favElem.fav_id = _context.Favourites.Count() + 1;
+        }
+        else
+        {
+            favElem.fav_id = 1;
+        }
         favElem.product_id = id;
         favElem.user_id = int.Parse(User.FindFirst("user_id").Value);
         _context.Favourites.Add(favElem);

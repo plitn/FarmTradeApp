@@ -41,13 +41,13 @@
     </div>
   </header>
     <div class="product-grid">
-  @foreach (var product in Model)
+  @foreach (var product in Model.OrderByDescending(x => x.product_id))
   {
     <a href="~/Product?id=@product.product_id">
     <div class="product">
       <img src="@product.photo" alt="pic" >
       <h3>@product.name</h3>
-      <p>@product.description</p>
+      <p><b>@product.price</b> rubles</p>
     </div>
     </a>
   }

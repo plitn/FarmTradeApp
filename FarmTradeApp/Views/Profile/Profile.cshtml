@@ -65,13 +65,13 @@
       }
     </div>
   <div class="product-grid">
-    @foreach (var product in Model.Products)
+    @foreach (var product in Model.Products.OrderByDescending(x => x.product_id))
     {
       <a href="~/Product?id=@product.product_id">
     <div class="product">
       <img src="@product.photo">
       <h3>@product.name</h3>
-      <p>@product.description</p>
+      <p><b>@product.price</b> rubles</p>
     </div>
     </a>
     }

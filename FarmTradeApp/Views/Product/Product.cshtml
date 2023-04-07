@@ -53,26 +53,28 @@
           @Model.Product.description
         </div>
         @if (Model.IsFavourited && User.Identity.IsAuthenticated && User.FindFirst("user_id").Value
-          != Model.Seller.user_id.ToString())
+             != Model.Seller.user_id.ToString())
         {
           <a href="~/Product/UnFav?id=@Model.Product.product_id">
-          <button class="delete-button">Remove from favourites</button>
-        </a>
+            <button class="delete-button">Remove from favourites</button>
+          </a>
         }
         else if (User.Identity.IsAuthenticated && User.FindFirst("user_id").Value
                  != Model.Seller.user_id.ToString())
         {
           <a href="~/Product/Fav?id=@Model.Product.product_id">
-        <button class="contact-button">Add to favourites</button>
-        </a>
+            <button class="contact-button">Add to favourites</button>
+          </a>
         }
       </div>
+      <a href="~/Profile/@Model.Seller.user_id">
       <div class="seller-info">
         <div class="seller-photo">
           <img src="@Model.Seller.profile_picture" alt="" class="seller-photo">
         </div>
         <div class="seller-name">@Model.Seller.first_name</div>
-      </div>
+      </div>     
+        </a>
       <a href="~/Profile/@Model.Seller.user_id">
         @if (User.Identity.IsAuthenticated && Model.Seller.user_id.ToString() == User.FindFirst("user_id").Value)
         {
@@ -82,7 +84,9 @@
         }
         else
         {
-          <button class="contact-button">Contact Seller</button>
+          <a href="mailto: @Model.Seller.email?subject=Buy @Model.Product.name&body=Добрый день меня заинтересовала покупка товара @Model.Product.name">
+            <button class="contact-button">Contact Seller</button>
+            </a>
         }
       </a>
     </div>

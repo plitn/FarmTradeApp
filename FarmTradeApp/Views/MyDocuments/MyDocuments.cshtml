@@ -65,22 +65,26 @@
       }
     </div>
   <div class="product-grid">
-    @foreach (var doc in Model.Documents)
+    @if (Model.Documents.Any())
     {
-      var x = doc.title.Split(' ')[0];
-      string link = $"https://via.placeholder.com/150x150.png?text={x}+Document";
-      <a href="@doc.file_path">
-        <div class="product">
-      <img src= @link>
-      <h3>@doc.title</h3>
-      @if (Model.user.user_id.ToString() == User.FindFirst("user_id").Value)
+      @foreach (var doc in Model.Documents)
       {
-        <a href="~/MyDocuments/DelDoc?id=@doc.document_id">
-          <button class="delete-button">Remove</button>
-        </a>
-      }
+        var x = doc.title.Split(' ')[0];
+        string link = $"https://via.placeholder.com/150x150.png?text={x}+Document";
+
+        <div class="product">
+          <a href="@doc.file_path">
+            <img src=@link>
+            <h3>@doc.title</h3>
+            @if (Model.user.user_id.ToString() == User.FindFirst("user_id").Value)
+            {
+              <a href="~/MyDocuments/DelDoc?id=@doc.document_id">
+                <button class="delete-button">Remove</button>
+              </a>
+            }
+          </a>
         </div>
-    </a>
+      }
     }
   </div>
     <script>
