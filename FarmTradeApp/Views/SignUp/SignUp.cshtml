@@ -4,25 +4,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sign In</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="~/css/signUpStyle.css">
   </head>
 <main>
   <div class="form-container">
     <form class="sign-in-form"  id="my-form" method="post" asp-action="ManageSignUp" enctype="multipart/form-data">
-      <h1>Sign Up</h1>
-      <label for="name" >Name</label>
+      <h1>Регистрация</h1>
+      <label for="name" >Имя</label>
       <input type="name" id="name" name="name" required>
-      <label for="addr">Address</label>
+      <label for="addr">Адрес</label>
       <input type="name" id="addr" name="addr" required>
-      <label for="photo">Profile Photo</label>
+      <label for="photo">Фото профиля</label>
       <input type="file" id="photo" name="photo" accept="image/*" required>
-      <label for="email">Email</label>
+      <label for="email">Электронная почта</label>
       <input type="email" id="email" name="email" required>
-      <label for="password">Password</label>
+      <label for="password">Пароль</label>
       <input type="password" id="password" name="password" required>
-      <button type="submit" class="sign-in-button" id="sign">Sign Up</button>
-      <p>Already have an account? <a href="~/SignIn">Sign In</a></p>
+      <button type="submit" class="sign-in-button" id="sign">Зарегистрироваться</button>
+      <p>Уже есть аккаунт? <a href="~/SignIn">Войти</a></p>
     </form>
   </div>
 </main>

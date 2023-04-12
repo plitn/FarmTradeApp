@@ -14,11 +14,11 @@
         <div class="search-bar">
           <form asp-controller="Home" asp-action="Search" method="GET">
           <input type="text" class="search-input" name="search_params" placeholder="Search products...">
-          <button class="search-button" type="submit">Search</button>
+          <button class="search-button" type="submit">Поиск</button>
           </form>
         </div>
         <div class="dropdown user-buttons">
-          <button class="user-button">Categories</button>
+          <button class="user-button">Категории</button>
           <ul class="dropdown-menu">
             @foreach (var cat in (IEnumerable<Category>)ViewData["catList"])
             {
@@ -29,13 +29,13 @@
         <div class="user-buttons">
           @if (User.Identity.IsAuthenticated)
           {
-            <a class="user-button button" href="~/Favourites">Favourites</a>
-            <a class="user-button button" href="~/Profile">Account</a>
+            <a class="user-button button" href="~/Favourites">Избранное</a>
+            <a class="user-button button" href="~/Profile">Аккаунт</a>
           }
           else
           {
-            <a class="user-button button" href="~/SignIn">Sign In</a>
-            <a class="user-button button" href="~/SignUp">Sign Up</a>
+            <a class="user-button button" href="~/SignIn">Войти</a>
+            <a class="user-button button" href="~/SignUp">Регистрация</a>
           }
         </div>
       </header>
@@ -47,17 +47,17 @@
       <div class="product-info">
         <div class="product-name">@Model.Product.name</div>
         <div class="product-description">
-          <b>Price:</b> @Model.Product.price for @Model.Product.weight <b>@Model.WeightType.Type_name</b>
+          <b>Цена:</b> @Model.Product.price за @Model.Product.weight <b>@Model.WeightType.Type_name</b>
         </div>
         <div class="product-description">
-          <b>Descripion:</b> <br>
+          <b>Описание:</b> <br>
           @Model.Product.description
         </div>
         @if (Model.IsFavourited && User.Identity.IsAuthenticated && User.FindFirst("user_id").Value
              != Model.Seller.user_id.ToString())
         {
           <a href="~/Product/UnFav?id=@Model.Product.product_id">
-            <button class="delete-button">Remove from favourites</button>
+            <button class="delete-button">Удалить из избранного</button>
           </a>
         }
         else if (User.Identity.IsAuthenticated && User.FindFirst("user_id").Value

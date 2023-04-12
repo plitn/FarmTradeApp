@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UWtUhm7QS502CY49XBuLLZXVsD1T3EVBumH3bYDS2h8=",
+  "Hash": "iMbt6B04UkIlHpk6UtWY39t9dIiBa7Kc5bw4xt2dPVU=",
   "Source": "FarmTradeApp",
   "BasePath": "_content/FarmTradeApp",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/docs/20230407145818554-a5834c4f-203b-4243-8cf0-9073727a1a48.pdf"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/docs/20230409193517306-6f392238-884a-4365-a48c-5eaa8e106c86.pdf",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "docs/20230409193517306-6f392238-884a-4365-a48c-5eaa8e106c86.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/docs/20230409193517306-6f392238-884a-4365-a48c-5eaa8e106c86.pdf"
     },
     {
       "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/favicon.ico",
@@ -882,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/20230407143301434-3eb4b146-ad27-4ba1-8d7c-e6a3ed2d496d.jpeg"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/images/20230409193411818-a9af3b63-46a3-4cb7-bb68-2d7d6a35a9a0.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "images/20230409193411818-a9af3b63-46a3-4cb7-bb68-2d7d6a35a9a0.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/20230409193411818-a9af3b63-46a3-4cb7-bb68-2d7d6a35a9a0.jpeg"
     },
     {
       "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/images/milk.jpeg",
@@ -1953,6 +1987,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/profilePhotos/20230407142131811-4feceae4-6eeb-4761-a6cc-a398a725d3c0.jpeg"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/profilePhotos/20230409193226026-de304228-1498-4830-9ecc-77f83a36a6eb.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "profilePhotos/20230409193226026-de304228-1498-4830-9ecc-77f83a36a6eb.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profilePhotos/20230409193226026-de304228-1498-4830-9ecc-77f83a36a6eb.jpeg"
+    },
+    {
+      "Identity": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/profilePhotos/20230412144332134-79d6351c-dbf1-461d-8e8c-08a12cb98084.jpeg",
+      "SourceId": "FarmTradeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/platon/RiderProjects/FarmTradeApp/FarmTradeApp/wwwroot/",
+      "BasePath": "_content/FarmTradeApp",
+      "RelativePath": "profilePhotos/20230412144332134-79d6351c-dbf1-461d-8e8c-08a12cb98084.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profilePhotos/20230412144332134-79d6351c-dbf1-461d-8e8c-08a12cb98084.jpeg"
     }
   ]
 }

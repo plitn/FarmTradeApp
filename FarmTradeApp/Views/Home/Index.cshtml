@@ -20,7 +20,7 @@
       </form>
     </div>
     <div class="dropdown user-buttons">
-      <button class="user-button">Categories</button>
+      <button class="user-button">Категории</button>
       <ul class="dropdown-menu">
         @foreach (var cat in (IEnumerable<Category>)ViewData["catList"])
         {
@@ -31,13 +31,13 @@
     <div class="user-buttons">
       @if (User.Identity.IsAuthenticated)
       {
-        <a class="user-button button" href="~/Favourites">Favourites</a>
-        <a class="user-button button" href="~/Profile">Account</a>
+        <a class="user-button button" href="~/Favourites">Избранное</a>
+        <a class="user-button button" href="~/Profile">Аккаунт</a>
       }
       else
       {
-        <a class="user-button button" href="~/SignIn">Sign In</a>
-        <a class="user-button button" href="~/SignUp">Sign Up</a>
+        <a class="user-button button" href="~/SignIn">Войти</a>
+        <a class="user-button button" href="~/SignUp">Регистрация</a>
       }
     </div>
   </header>

@@ -9,15 +9,14 @@
 <main>
   <div class="form-container">
     <form class="sign-in-form"  id="my-form" method="post" asp-action="ManageDoc" enctype="multipart/form-data">
-      <h1>Sign Up</h1>
-      <label for="name">Document Name:</label>
+      <h1>Загрузка документа</h1>
+      <label for="name">Название документа:</label>
       <input type="name" id="name" name="name" required>
       <br>
-      <label for="doc">File:</label>
+      <label for="doc">Документ:</label>
       <input type="file" id="doc" name="doc" accept="application/pdf" required>
       <br>
-      <button type="submit" class="sign-in-button" id="add">Add</button>
-      <p>Already have an account? <a href="#">Sign In</a></p>
+      <button type="submit" class="sign-in-button" id="add">Загрузить</button>
     </form>
   </div>
 </main>

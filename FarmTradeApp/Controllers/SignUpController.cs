@@ -28,7 +28,6 @@ public class SignUpController : Controller
     [HttpPost]
     public async Task<IActionResult> ManageSignUp()
     {
-        //Console.WriteLine(_context.Users.ElementAt(0));
         var user = new Users();
         user.user_id = _context.Users.OrderBy(x => x.user_id).Last().user_id + 1;
         user.password = HttpContext.Request.Form["password"];
